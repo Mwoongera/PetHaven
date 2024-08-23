@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/css/upload.css">
+</head>
+
+<body>
+
+<h5 class="text-success text-center">{{message1}}</h5>
+<h5 class=" text-primary text-center">{{message2}}</h5>
+
+   <section class="row bg-warning p-4">
+    <div class="col-md-6">
+
+<!-- upload form -->
+<form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="text" name="product_name" id="product-name" placeholder="Enter Product Name" class="form-control"> <br>
+<textarea name="product_desc" id="Product_desc" 
+placeholder="Enter product description" class="form-control" rows="5"></textarea> <br>
+
+<input type="number" name="product_cost" id="product_cost" placeholder="Enter product cost"
+class="form-control"> <br>
+
+<input type="number" name="product_discount" id="product_discount" placeholder="Enter product discount"
+class="form-control"> <br>
+
+<select name="product_category" id="product_category" class="form-control">
+     <option value="New Products">New Products</option>
+    <option value="Dog Food">Dog Food</option>
+    <option value="Cat food">Cat Food</option>
+    <option value="Bird Food">Bird Food</option>
+    <option value="Fish Food">Fish Food</option>
+    <option value="Hamster Food">Hamster Food</option>
+</select> <br>
+
+<input type="file" name="product_image1" id="product_image 1" class="form-control" required> <br>
+
+<button type="submit" class="btn btn-dark">Upload Products</button>
+
+</form>
+
+
+
+    </div>
+<!-- col 1 -->
+    <div class="col-md-6">
+        <img src="https://i.postimg.cc/G2v0JHVQ/pexels-blue-bird-7210284.jpg" 
+        alt=""width="100%" height="100%">
+    </div>
+
+   </section>
+</body>
+</html>

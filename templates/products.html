@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <script src="static/js/products.js"></script>
+
+    <style>
+        #products {
+            text-decoration-line:underline;
+            text-decoration-color:  #200b4b; 
+          }
+
+        #new {
+            text-decoration-line:underline;
+            text-decoration-style:dashed;
+            text-decoration-color:  #200b4b; 
+          }
+
+          #foods {
+            text-decoration-line:underline;
+            text-decoration-style:dashed;
+            text-decoration-color:  #200b4b; 
+          }
+
+
+          #p {
+            text-align: center;  
+            color:#200b4b; 
+          }
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Oswald', sans-serif;
+}
+.alert {
+    position: fixed;
+    top: 5%;
+    right: 2%;
+    background: rgb(255,250,245);
+    color: #fff;
+    font-weight: 800;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    padding: 20px;
+    width: 300px;
+    height: 100vh;
+    border-radius: 10px;
+    transform: translateX(150%);
+    transition: transform 0.3s ease-in-out;
+}
+.alert .navigation1
+{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    text-align: center;
+}
+.alert .navigation1 li a
+{
+    text-decoration: none;
+    color: #57557D;
+}
+.alert p {
+    margin: 30px;
+    letter-spacing: 1px;
+}
+
+.alert i {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 30px;
+    cursor: pointer;
+    color: #57557D;
+}
+body
+{
+    background: rgb(255,250,245);
+}
+.banner
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+    background: rgb(255,250,245);
+    background: linear-gradient(rgba(0,0,0,0.40),rgba(0,0,0,0.40)),url(https://i.postimg.cc/Pr1sw3SW/wp11428610-dogs-and-cats-spring-wallpapers.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    padding-top: 100px;
+    margin: 0px 80px;
+}
+header .hamburger
+{
+    display: none;
+}
+header
+{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding: 20px 60px;
+    background: rgb(255,250,245);
+    position: fixed;
+    border-bottom: 1px solid #aaa;
+}
+
+header .logo
+{
+    color: rgb(48,47,81);
+    font-weight: bold;
+    font-size: 2.5em;
+    text-decoration: none;
+}
+header ul
+{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 60px;
+    list-style: none;
+}
+header .navigation li a
+{
+    text-decoration: none;
+    color: rgb(48,47,81);
+    transition: .5s;
+}
+header .navigation li a:hover{
+    color: rgb(153, 150, 252);
+}
+.banner .title
+{
+    max-width: 900px;
+    text-align: left;
+}
+.banner .title h1
+{
+    text-align: center;
+    font-size: 3em;
+    color: #fff;
+    letter-spacing: 3px;
+}
+.btn
+{
+    padding: 20px 30px;
+    color: #fff;
+    text-decoration: none;
+    background: rgb(48,47,81);  
+    margin-top: 30px;
+    font-weight: 300;
+    transition: .5s;
+}
+.btn:hover
+{
+    background: rgb(91, 89, 151);
+}
+section
+{
+    padding: 100px 0;
+}
+
+.shop .title
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    gap: 15px;
+}
+.title h2
+{
+    font-size: 2.2em;
+    color: rgb(48,47,81);
+}
+.title p
+{
+    font-size: 1.2em;
+}
+
+.shop .content
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+.shop .content .box
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    gap: 10px;
+}
+.shop .content .box .text
+{
+    font-size: 1.2em;
+    color: rgb(48,47,81);
+}
+.shop .content .box .price
+{
+    color: rgb(48,47,81);
+}
+.shop .content .box .imgbtn a
+{
+    text-decoration: none;
+    color: #fff;
+    background: rgb(48,47,81);
+    width: 100%;
+    padding: 5px 30px;
+    visibility: hidden;
+    
+}
+.shop .content .box:hover .imgbtn a
+{
+    visibility: visible;
+}
+.sall
+{
+    text-decoration: none;
+    color: rgb(48,47,81);
+    border: 2px solid rgb(48,47,81);
+    padding: 5px 30px;
+    transition: .5s;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.sall:hover
+{
+    background: rgb(48,47,81);
+    color: #fff;
+}
+.about .line
+{   
+    width: 100px;
+    border-top: 1px solid black;
+}
+.about
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.about .title h2
+{
+    margin-bottom: 50px;
+}
+.imgtext
+{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    flex-wrap: wrap;
+}
+.imgtext img
+{
+    height: 110vh;
+    background-size: cover;
+    width: 100%;
+}
+.imgtext .info
+{
+    position: absolute;
+
+    background: rgb(244,195,91);
+    height: 100%;
+    opacity: .90;
+    left: 100px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    width: 450px;
+    padding: 110px;
+    color: rgb(48,47,81);
+}
+.imgtext .info .infocontent 
+{
+    padding: 10px 0;
+    border-bottom: 1px solid rgb(48,47,81);
+}
+.imgtext .info .infocontent h3
+{
+    font-size: 2em;
+}
+.imgtext .info .infocontent p
+{
+    font-style: italic;
+    padding: 10px 0;
+}
+.review .title
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    gap: 15px;
+}
+.container
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+}
+.container img
+{
+    width: 300px;
+    height: 300px;
+}
+.container .bbox
+{
+    width: 300px;
+    height: 300px;
+}
+.container .cbox2
+{
+    background: #857C48;
+    color: #fff;
+    position: relative;
+}
+.container .cbox2 h1
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.container .cbox4
+{
+    background: #57557D;
+    color: #fff;
+    position: relative;
+}
+.container .cbox4 .boxdetail
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.container .cbox5
+{
+    background: #FEC74F;
+    color: rgb(48,47,81);
+    position: relative;
+}
+.container .cbox5 .boxdetail
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.container .cbox7
+{
+    background: #F88D58;
+    color: rgb(48,47,81);
+    position: relative;
+}
+.container .cbox7 .boxdetail
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.contact
+{
+    margin: 0 80px;
+    border-top: 1px solid rgb(48,47,81);
+    border-bottom: 1px solid rgb(48,47,81);
+}
+.contact .footer
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.footer .links .navigation
+{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 20px;
+    list-style: none;
+}
+.footer .links .navigation li a
+{
+    text-decoration: none;
+    color: rgb(48,47,81);
+    transition: .5s;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+footer .links .navigation li a:hover{
+    color: rgb(153, 150, 252);
+}
+.footer .info
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 200px;
+    font-size: 1.1em;
+}
+.footer .info h1
+{
+    color: rgb(48,47,81); 
+    text-align: center;
+}
+.footer .cs
+{
+    display: flex;
+    flex-direction: column;
+    color: rgb(48,47,81);
+}
+.footer .cs ul
+{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;  
+    list-style: none;
+}
+.footer .cs li
+{
+    text-decoration: none;
+    color: rgb(48,47,81);
+    transition: .5s;
+    font-size: 1.1em;
+}
+.footer .slinks
+{
+    display: flex;
+    flex-direction: column;
+    color: rgb(48,47,81);
+}
+.footer .slinks .link
+{
+    margin-top: 10px;
+}
+.form
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.form h1
+{
+    font-size: 2em;
+    color: rgb(48,47,81);
+}
+.form input
+{
+    padding: 10px 250px;
+    background: transparent;
+}
+.form button
+{
+    padding: 10px 300px;
+    color: #fff;
+    background: #F88D58;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 2px;
+}
+.strip
+{
+    background: rgb(48,47,81);
+    width: 100%;
+    height: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.strip h1
+{
+    color: #fff;
+    font-weight: 300;
+}
+.strip .icons a{
+    color: #fff;
+}
+
+@media (max-width: 991px){
+    .banner
+    {
+        margin: 0px;
+    }
+    .banner .title h1 {
+        font-size: 2em;
+    }
+    .btn {
+        padding: 10px 30px;
+    }
+    .shop .title p{
+        text-align: center;
+    }
+    .contact
+    {
+        margin: 0px;
+    }
+    .about
+    {
+        display: flex;
+        
+        flex-direction: column;
+    }
+    .imgtext img
+    {
+        width: 350px;
+        object-fit: cover;
+    }
+    .imgtext .info
+    {
+        width: 300px;
+        left: 30px;
+        padding: 20px 20px;
+    }
+    .shop .content
+    {
+        justify-content: center;
+    }
+    .form input
+    {
+        padding: 10px 80px;
+    }
+    .form button
+    {
+        padding: 10px 80px;
+    }
+    .contact .footer
+    {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        background: rgb(48,47,81);
+        color: #fff;
+        
+    }
+    .footer .links .navigation li a
+    {
+        color: #fff;
+    }
+    .footer .info h1
+    {
+        color: #fff; 
+        text-align: left;
+    }
+    .footer .cs
+    {
+        color: #fff;
+    }
+    .footer .cs li
+    {
+        color: #fff;
+    }
+    .footer .slinks
+    {
+        color: #fff;
+    }
+    .footer .slinks .link a
+    {
+        text-decoration: none;
+        color: #fff;
+    }
+    .contact .footer {
+        padding: 30px 20px;
+        gap: 50px;
+    }
+    header .navigation
+    {
+        display: none;
+    }
+    header .hamburger
+    {
+        display: block;
+    }
+    header .logo
+    {
+        font-size: 1.5em;
+    }
+}
+@media (min-width: 768px)and (max-width: 991px){ 
+    .about
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    .imgtext img
+    {
+        width: 700px;
+        object-fit: cover;
+        height: 700px;
+    }
+    .imgtext .info
+    {
+        width: 650px;
+        left: 30px;
+        justify-content: center;
+        gap: 60px;
+    }   
+    header .hamburger
+    {
+        display: block;
+    }
+    header .logo
+    {
+        font-size: 1.5em;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <form action="/products" method="post">
+    <header>
+        <div class="logo">Pet Haven</div>
+    </header>
+
+    <main>
+        <section>
+    <!--Products Section-->
+     <section class="shop" id="shop">
+        <div class="title">
+            <h2 class="titetext" id="products">Products</h2>
+            <p>New products for your best friend available.</p><br>
+        </div>
+        <div class="title">
+            <h2 class="titetext" id="new">New Products</h2>
+        </div>
+        <div class="content">
+            <div class="box">
+                <div class="imgbx">
+                    <img src="https://static.wixstatic.com/media/84770f_b29b9b581f7743aa9b5aafd7c2f8398c~mv2_d_2635_2710_s_4_2.png/v1/fill/w_246,h_253,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/84770f_b29b9b581f7743aa9b5aafd7c2f8398c~mv2_d_2635_2710_s_4_2.png" alt="">
+                </div>
+                <div class="text">
+                    Fish Delights - Wild Salmon
+                </div>
+                <div class="price">
+                    <b>$25.00</b>
+                </div>
+                <div class="imgbtn">
+            <a href="#" class="buy-btn" onclick="buyNow('Products')">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="imgbx">
+                    <img src="https://static.wixstatic.com/media/84770f_586451c786fb4a599c98681292d20be4~mv2_d_2635_2710_s_4_2.png/v1/fill/w_246,h_253,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/84770f_586451c786fb4a599c98681292d20be4~mv2_d_2635_2710_s_4_2.png" alt="">
+                </div>
+                <div class="text">
+                    Fish Delights - Lamb
+                </div>
+                <div class="price">
+                    <b>$25.00</b>
+                </div>
+                <div class="imgbtn">
+                    <a href="/cart" class="btn1">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="imgbx">
+                    <img src="https://static.wixstatic.com/media/84770f_b7850d79542a400a8058ca3b7d1fb51b~mv2_d_2635_2710_s_4_2.png/v1/fill/w_246,h_253,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/84770f_b7850d79542a400a8058ca3b7d1fb51b~mv2_d_2635_2710_s_4_2.png" alt="">
+                </div>
+                <div class="text">
+                    Fish Delights - Chicken & Beef
+                </div>
+                <div class="price">
+                    <b>$25.00</b>
+                </div>
+                <div class="imgbtn">
+                    <a href="/cart" class="btn1">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="imgbx">
+                    <img src="https://static.wixstatic.com/media/84770f_f617f3a2e0634293bd47f7fa29ba64c2~mv2_d_2635_2710_s_4_2.png/v1/fill/w_246,h_253,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/84770f_f617f3a2e0634293bd47f7fa29ba64c2~mv2_d_2635_2710_s_4_2.png" alt="">
+                </div>
+                <div class="text">
+                    Fish Delights - Potato & Spinach
+                </div>
+                <div class="price">
+                    <b>$25.00</b>
+                </div>
+                <div class="imgbtn">
+                    <a href="/cart" class="btn1">Buy Now</a>
+                </div>
+            </div>
+        </div>
+        <a href="/newproducts" class="sall">See All</a><br><br>
+
+        <div class="title"><br><br>
+            <h2 class="titetext" id="new">Dog Food</h2>
+        </div>
+        <div class="content">
+            <div class="box">
+                <div class="imgbx">
+                    <img src="../static/petimages/dogfood1.webp" alt=""  width="246px" height="253px">
+                </div>
+                <div class="text">
+                    Bewi Dog - Canned Meat
+                </div>
+                <div class="price">
+                    <b>KES.2438</b>
+                </div>
+                <div class="imgbtn">
+                    <a href="/cart" class="btn1">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="imgbx">
+                    <img src="../static/petimages/dogfood2.jpg" alt=""  width="246px" height="253px">
+                </div>
+                <div class="text">
+                   Josi Dog - Adult(15Kg)
+                </div>
+                <div class="price">
+                    <b>KES.6432</b>
+                </div>
+                <div class="imgbtn">
+                    <a href="/cart" class="btn1">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="imgbx">
+                    <img src="../static/petimages/dogfood3.webp" alt=""  width="246px" height="253px">
+                </div>
+                <div class="text">
+                   Josi Dog - Junior(15Kg)
+                </div>
+                <div class="price">
+                    <b>KES.10522</b>
+                </div>
+                <div class="imgbtn">
+                    <a href="/cart" class="btn1">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="imgbx">
+                    <img src="../static/petimages/dogfood4.webp" alt=""  width="246px" height="253px">
+                </div>
+                <div class="text">
+                   Josi Dog - Active(15Kg)
+                </div>
+                <div class="price">
+                    <b>KES.9745</b>
+                </div>
+                <div class="imgbtn">
+                    <a href="/cart" class="btn1">Buy Now</a>
+                </div>
+            </div>
+        </div>
+        <a href="/dogfood" class="sall">See All</a><br><br>
+
+          <div class="title"><br><br>
+              <h2 class="titetext" id="foods">Cat Food</h2>
+          </div>
+          <div class="content">
+              <div class="box">
+                  <div class="imgbx">
+                      <img src="../static/petimages/catfood1.jpg" alt=""  width="246px" height="253px">
+                  </div>
+                  <div class="text">
+                      Bonnie - Dry kitten Food
+                  </div>
+                  <div class="price">
+                      <b>KES.720</b>
+                  </div>
+                  <div class="imgbtn">
+                      <a href="/cart" class="btn1">Buy Now</a>
+                  </div>
+              </div>
+  
+              <div class="box">
+                  <div class="imgbx">
+                      <img src="../static/petimages/catfood2.jpg" alt=""  width="246px" height="253px">
+                  </div>
+                  <div class="text">
+                     Catnip - Paltner
+                  </div>
+                  <div class="price">
+                      <b>KES.495</b>
+                  </div>
+                  <div class="imgbtn">
+                      <a href="/cart" class="btn1">Buy Now</a>
+                  </div>
+              </div>
+  
+              <div class="box">
+                  <div class="imgbx">
+                      <img src="../static/petimages/catfood3.webp" alt=""  width="246px" height="253px">
+                  </div>
+                  <div class="text">
+                     Leonardo - Wet Cat Food
+                  </div>
+                  <div class="price">
+                      <b>KES.130</b>
+                  </div>
+                  <div class="imgbtn">
+                      <a href="/cart" class="btn1">Buy Now</a>
+                  </div>
+              </div>
+  
+              <div class="box">
+                  <div class="imgbx">
+                      <img src="../static/petimages/catfood4.jpg" alt=""  width="246px" height="253px">
+                  </div>
+                  <div class="text">
+                    King plus - Adult
+                  </div>
+                  <div class="price">
+                      <b>KES.575</b>
+                  </div>
+                  <div class="imgbtn">
+                      <a href="/cart" class="btn1">Buy Now</a>
+                  </div>
+              </div>
+          </div>
+          <a href="/catfood" class="sall">See All</a><br><br>
+
+     <div class="title"><br><br>
+         <h2 class="titetext" id="foods">Bird Food</h2>
+     </div>
+     <div class="content">
+         <div class="box">
+             <div class="imgbx">
+                 <img src="../static/petimages/birdfood1.jpg" alt=""  width="246px" height="253px">
+             </div>
+             <div class="text">
+                 Bonnie - Bird Food
+             </div>
+             <div class="price">
+                 <b>KES.780</b>
+             </div>
+             <div class="imgbtn">
+                 <a href="/cart" class="btn1">Buy Now</a>
+             </div>
+         </div>
+
+         <div class="box">
+             <div class="imgbx">
+                 <img src="../static/petimages/birdfood2.jpg" alt=""  width="246px" height="253px">
+             </div>
+             <div class="text">
+               Bonnie - Wild Bird Food
+             </div>
+             <div class="price">
+                 <b>KES.780</b>
+             </div>
+             <div class="imgbtn">
+                 <a href="/cart" class="btn1">Buy Now</a>
+             </div>
+         </div>
+
+         <div class="box">
+             <div class="imgbx">
+                 <img src="../static/petimages/birdfood3.jpg" alt=""  width="246px" height="253px">
+             </div>
+             <div class="text">
+                Bonnie - Parrot Food
+             </div>
+             <div class="price">
+                 <b>KES.970</b>
+             </div>
+             <div class="imgbtn">
+                 <a href="/cart" class="btn1">Buy Now</a>
+             </div>
+         </div>
+
+         <div class="box">
+             <div class="imgbx">
+                 <img src="../static/petimages/birdfood4.jpg" alt=""  width="246px" height="253px">
+             </div>
+             <div class="text">
+                Bonnie - Parakeets Bird Food
+             </div>
+             <div class="price">
+                 <b>KES.880</b>
+             </div>
+             <div class="imgbtn">
+                 <a href="/cart" class="btn1">Buy Now</a>
+             </div>
+         </div>
+     </div>
+     <a href="/birdfood" class="sall">See All</a><br><br>
+
+        <div class="title"><br><br>
+            <h2 class="titetext" id="new">Fish Food</h2>
+        </div>
+        <div class="content"> 
+            <div class="box">
+                <div class="imgbx">
+                    <img src="../static/petimages/fishfood1.webp" alt=""  width="246px" height="253px">
+                </div>
+                <div class="text">
+                    Bonnie - Bird Food
+                </div>
+                <div class="price">
+                    <b>KES.780</b>
+                </div>
+                <div class="imgbtn">
+                    <a href="/cart" class="btn1">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="imgbx">
+                    <img src="../static/petimages/fishfood2.webp" alt="" width="246px" height="253px">
+                </div>
+                <div class="text">
+                    Bonnie - Bird Food
+                </div>
+                <div class="price">
+                    <b>KES.780</b>
+                </div>
+                <div class="imgbtn">
+                    <a href="/cart" class="btn1">Buy Now</a>
+                </div>
+            </div>
+        
+
+        <div class="box">
+            <div class="imgbx">
+                <img src="../static/petimages/fishfood3.webp" alt="" width="246px" height="253px">
+            </div>
+            <div class="text">
+                Bonnie - Bird Food
+            </div>
+            <div class="price">
+                <b>KES.780</b>
+            </div>
+            <div class="imgbtn">
+                <a href="/cart" class="btn1">Buy Now</a>
+            </div>
+        </div>
+
+
+    <div class="box">
+        <div class="imgbx">
+            <img src="../static/petimages/fishfood4.webp" alt="" width="246px" height="253px">
+        </div>
+        <div class="text">
+            Bonnie - Bird Food
+        </div>
+        <div class="price">
+            <b>KES.780</b>
+        </div>
+        <div class="imgbtn">
+            <a href="/cart" class="btn1">Buy Now</a>
+        </div>
+    </div>
+</div>
+
+        <a href="/fishfood" class="sall">See All</a><br><br>
+
+          <div class="title"><br><br>
+            <h2 class="titetext" id="new">Hamster Food</h2>
+        </div>
+        <div class="content">
+            <div class="box">
+                <div class="imgbx">
+                    <img src="../static/petimages/hamsfood1.png" alt=""  width="246px" height="253px">
+                </div>
+                <div class="text">
+                    Bonnie - Rabbits & Rodents
+                </div>
+                <div class="price">
+                    <b>KES.780</b>
+                </div>
+                <div class="imgbtn">
+                    <a href="/cart" class="btn1">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="imgbx">
+                    <img src="../static/petimages/hamsfood2.jpg" alt=""  width="246px" height="253px">
+                </div>
+                <div class="text">
+                  Chew Proof - Small Animal Water Bottle
+                </div>
+                <div class="price">
+                    <b>KES.880</b>
+                </div>
+                <div class="imgbtn">
+                    <a href="/cart" class="btn1">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="imgbx">
+                    <img src="../static/petimages/hamsfood3.jpg" alt=""  width="246px" height="253px">
+                </div>
+                <div class="text">
+                  Mixed Wood - Small Animal Bedding
+                </div>
+                <div class="price">
+                    <b>KES.1000</b>
+                </div>
+                <div class="imgbtn">
+                    <a href="/cart" class="btn1">Buy Now</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="imgbx">
+                    <img src="../static/petimages/hamsfood4.webp" alt=""  width="246px" height="253px">
+                </div>
+                <div class="text">
+                  Bioline Pet- Tear Stain Remover
+                </div>
+                <div class="price">
+                    <b>KES.970</b>
+                </div>
+                <div class="imgbtn">
+                    <a href="/cart" class="btn1">Buy Now</a>
+                </div>
+            </div>
+        </div>
+         <a href="/hamsterfood" class="sall">See All</a><br><br>
+
+     </section>
+        </section>
+    </main>
+        
+     </section>
+        </section>
+    </main>
+
+    <footer>
+        <p id="p">&copy; 2024 Pet Haven. All rights reserved.</p><br><br>
+    </footer>
+
+</body>
+
+</html>

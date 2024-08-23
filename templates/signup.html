@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style/css">
+    <script src="style/js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        header {
+            width: 100%;
+            background-color: #211031;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        main {
+            width: 100%;
+            max-width: 400px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="name"],
+        input[type="email"],
+        input[type="phone"]{
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #200b4b;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgb(94, 48, 163);
+        }
+
+        #signup-message {
+            color: rgb(94, 48, 163);
+            font-weight: bold;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        #login {
+            text-align: center;
+            color: #000000;
+            font-weight: bold;
+            cursor: pointer; 
+        }
+    </style>
+</head>
+
+<body>
+     <main>
+          <h2>Sign Up</h2><br>
+          <form class="signup-form" action="/signup" method="post">
+              <label for="username">Username</label>
+              <input type="name" id="username" name="username" required><br>
+
+              <label for="email">Email</label>
+              <input type="email" id="useremail" name="email" required><br>
+
+              <label for="phone">Phone Number</label>
+              <input type="phone" id="phone" name="phone" required><br>
+              
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" required><br>
+
+            <label for="password">Confirm Password </label>
+            <input type="password" id="password" placeholder="password" name="confirm" required/><br>
+
+              <a href="/login"><p id="login" >Already Have An Account?</p></a><br><br>
+              
+              <button type="submit">Sign Up</button><br>
+              <p id="signup-message">{{message}}</p>
+          </form>
+      </main>
+  
+      <footer>
+          <p>&copy; 2024 Pet Haven. All rights reserved.</p><br>
+      </footer>
+
+     <script>
+          document.getElementById("signup-form").addEventListener("submit", function(event) {
+               event.preventDefault();
+          
+               // Get input values
+               var username = document.getElementById("username").value.trim();
+               var email = document.getElementById("email").value.trim();
+               var password = document.getElementById("password").value.trim();
+          
+               // Validate the form
+               if (!validateForm(username, email, password)) {
+               return;
+               }
+          
+               // Simulate form submission
+               console.log("Username: " + username);
+               console.log("Email: " + email);
+               console.log("Password: " + password);
+          
+               // Simulate a successful sign-up
+               alert("Sign up successful! Welcome, " + username + "!");
+               // Optionally, reset the form
+               document.getElementById("signup-form").reset();
+          });
+          
+          function validateForm(username, email, password) {
+               // Validate username
+               if (username === "") {
+               alert("Username is required.");
+               return false;
+               }
+          
+               // Validate email
+               if (email === "") {
+               alert("Email is required.");
+               return false;
+               } else if (!isValidEmail(email)) {
+               alert("Please enter a valid email address.");
+               return false;
+               }
+          
+               // Validate password
+               if (password === "") {
+               alert("Password is required.");
+               return false;
+               } else if (password.length < 6) {
+               alert("Password must be at least 6 characters long.");
+               return false;
+               }
+          
+               return true;
+          }
+          
+          function isValidEmail(email) {
+               // Simple email validation regex
+               var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+               return emailPattern.test(email);
+          }
+     </script>
+
+</body>
+
+</html>
